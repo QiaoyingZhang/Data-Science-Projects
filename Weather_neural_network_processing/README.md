@@ -25,6 +25,11 @@ The purpose of this project is to delve into the intricacies of neural networks,
     1. The dataset includes weather-related parameters such as temperature, precipitation, and humidity collected from various public records and open data portals.
     2. Data spans a significant time frame, ensuring a comprehensive set for robust model training and evaluation.
     3. MUTHUKUMAR.J.(2017). "Weather Dataset," Kaggle, https://www.kaggle.com/datasets/muthuj7/weather-dataset.
+![download](https://github.com/user-attachments/assets/645d8577-ed42-46bd-9208-7a2672f8a09d)
+![download](https://github.com/user-attachments/assets/495939bb-0445-4fd8-ba48-1eddce40fc77)
+![download](https://github.com/user-attachments/assets/62093c6f-3633-47a1-a6ae-5890806cbd85)
+![download](https://github.com/user-attachments/assets/fb0e6a2c-c89d-4ef9-9111-bef4b6adb14c)
+
 2. Goals and Hypotheses:
     1. Goal: To improve daily weather forecasting accuracy using neural networks.
     2. Hypothesis: RNNs, given their ability to handle sequential data, will outperform ANNs in weather prediction tasks due to the temporal dependencies in weather patterns.
