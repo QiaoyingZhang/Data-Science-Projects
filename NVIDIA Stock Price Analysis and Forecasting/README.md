@@ -7,7 +7,16 @@ This project focuses on building a comprehensive end-to-end solution to analyze 
 
 *The stock price data is sourced from the public API - Yahoo Finance (5 years of NVDA data)*
 
-![NVIDIA Stock Chart](nvidia_chart.png)
+*Data Preview:*
+| Date       | Open       | High       | Low        | Close      | Adj Close  | Volume      |
+|------------|------------|------------|------------|------------|------------|-------------|
+| 2019-10-15 | 4.754000   | 4.982250   | 4.740000   | 4.909250   | 4.885488   | 664124000   |
+| 2019-10-16 | 4.875000   | 4.980500   | 4.843750   | 4.855250   | 4.831748   | 428944000   |
+| 2019-10-17 | 4.900000   | 4.945250   | 4.802500   | 4.857250   | 4.833740   | 263436000   |
+| 2019-10-18 | 4.857750   | 4.890500   | 4.687500   | 4.762250   | 4.739199   | 307440000   |
+| 2019-10-21 | 4.824000   | 4.913750   | 4.805000   | 4.900250   | 4.876531   | 261868000   |
+
+![NVIDIA Stock Chart](nvda_chart.png)
 
 ### Time Series Analysis: ARIMA to SARIMAX
 To forecast future stock prices, the analysis first employs time series models, specifically ARIMA (Auto-Regressive Integrated Moving Average). The order and seasonal order of the model are optimized using metrics like AIC and diagnostics such as residual analysis to ensure stationarity and minimize autocorrelation. However, the presence of seasonal trends and exogenous factors, such as earnings reports or macroeconomic events, makes ARIMA limited in scope. To address these, the analysis extends to SARIMAX (Seasonal ARIMA with Exogenous Variables), which can model both seasonality and external influences, thus improving the accuracy of predictions.
@@ -32,31 +41,7 @@ While time series models provide solid baselines, the project goes beyond with m
 
 By employing a combination of time series models, machine learning models, and ensemble techniques, this project ensures that both short-term fluctuations and long-term trends are captured accurately, ultimately aiming to outperform baseline statistical forecasts.
 
-![Model Results](nvidia_results.png)
-
-## Table of Contents
-- [Project Introduction](#project-introduction)
-- [Import Libraries](#import-libraries)
-- [Extract Data](#extract-data)
-- [ETL Pipeline (Extract, Transform, Load)](#etl-pipeline-extract-transform-load)
-    - [Data Quality Check](#data-quality-check)
-    - [Transform Data](#transform-data)
-- [Data Visualization (Interactive Chart with Plotly)](#data-visualization-interactive-chart-with-plotly)
-- [Metrics](#metrics)
-- [Time Series Analysis (ARIMA + SARIMAX)](#time-series-analysis-arima--sarimax)
-    - [Preparing Data](#preparing-data)
-    - [ACF and PACF Plots](#acf-and-pacf-plots)
-    - [Applying ARIMA Model](#applying-arima-model)
-    - [Applying SARIMAX Model](#applying-sarimax-model)
-    - [Evaluate ARIMA & SARIMAX Models](#evaluate-arima--sarimax-models)
-    - [Time-Series Forecast Comparison](#time-series-forecast-comparison)
-- [Deep Learning + Machine Learning Approach](#deep-learning--machine-learning-approach)
-    - [Preparing Data](#preparing-data-1)
-    - [DL Approach](#dl-approach)
-    - [ML Approach](#ml-approach)
-    - [Stack Predictions](#stack-predictions)
-    - [Evaluate Ensemble Model](#evaluate-ensemble-model)
-- [Overall Comparison (Stacked Model vs ARIMA vs SARIMAX)](#overall-comparison-stacked-model-vs-arima-vs-sarimax)
+![Model Results](nvda_results.png)
 
 ## Requirements
 - Python 3.x
