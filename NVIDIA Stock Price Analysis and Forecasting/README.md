@@ -18,6 +18,42 @@ This project focuses on building a comprehensive end-to-end solution to analyze 
 
 ![NVIDIA Stock Chart](nvda_chart.png)
 
+**[Updated Version](https://github.com/QiaoyingZhang/Data-Science-Projects/blob/main/NVIDIA%20Stock%20Price%20Analysis%20and%20Forecasting/NVDA_stock_forcast_v2.ipynb):**
+The updated version of the prediction model has been designed to forecast the market's closing prices for the upcoming half-year by employing an ensemble approach that combines the strengths of multiple algorithms. This model utilizes a weighted average of predictions from a Feedforward Neural Network (FNN), XGBoost, and CatBoost, ensuring robust and accurate outcomes. To enhance predictive performance, the model incorporates lagged data from the past six months, drawing from a comprehensive dataset spanning 3.2 years for training and 0.8 years for validation. This structured methodology not only leverages the unique capabilities of each individual model but also provides a more reliable and nuanced understanding of market dynamics, enabling better investment decisions in an ever-evolving financial landscape.
+
+![Updated Result](nvda_results_v2.png)
+
+*Model Performance Evaluations*
+| Model      | MSE         | MAE        | R² Score   |
+|------------|-------------|------------|------------|
+| ARIMA      | 5891.862125 | 68.409926  | -23.792335 |
+| SARIMAX    | 5263.850681 | 65.192165  | -21.149729 |
+| Ensemble   | 1308.480368 | 33.035355  | -4.542774  |
+| Stack      | 1036.903187 | 30.147013  | -3.392363  |
+
+*Although the Stack model demonstrates a relatively lower mean squared error (MSE) and a higher R² score, indicating better performance on the training data, the Ensemble model exhibits greater variance in its predictions. This characteristic makes the Ensemble model particularly valuable for forecasting future data based on the previous half-year's worth of data. To achieve these results, extensive feature engineering has been performed, enhancing the model's ability to capture underlying trends and patterns in the data. **The results indicate an upward trend in the future market.***
+
+**Feature Engineering**
+- **Moving_Avg_30**: The 30-day simple moving average, used to smooth out price data and identify trends over a one-month period.
+- **Moving_Avg_100**: The 100-day simple moving average, which provides a longer-term view of price trends and helps filter out short-term fluctuations.
+- **Year**: Represents the calendar year in which the data is recorded, often used for seasonal analysis.
+- **Month**: Indicates the specific month of the year, useful for monthly trend assessments.
+- **Day**: Refers to the individual day within a month, important for daily trading analysis.
+- **DayOfWeek**: The specific day of the week (e.g., Monday, Tuesday) to analyze weekly trends and patterns.
+- **EMA_12**: The 12-day exponential moving average, giving more weight to recent prices to capture short-term trends more responsively.
+- **EMA_26**: The 26-day exponential moving average, used in conjunction with the EMA_12 to calculate the MACD.
+- **SMA_5**: The 5-day simple moving average, providing insight into very short-term price movements.
+- **SMA_20**: The 20-day simple moving average, balancing short-term price movements with slightly longer-term trends.
+- **Volatility_20**: A measure of price fluctuations over a 20-day period, indicating the degree of variability in the stock's price.
+- **MACD**: A momentum indicator that shows the relationship between two moving averages of a security's price, used for identifying trends and reversals.
+- **Upper_band**: The upper boundary of a Bollinger Band, representing a resistance level, calculated by adding a specified number of standard deviations to the moving average.
+- **Lower_band**: The lower boundary of a Bollinger Band, indicating a support level, calculated by subtracting a specified number of standard deviations from the moving average.
+- **Daily_Return**: The percentage change in price from one trading day to the next, providing insights into daily performance.
+- **Cumulative_Return**: The total return of an investment over a specified period, calculated by compounding daily returns.
+- **Range**: The difference between the highest and lowest prices in a trading period, indicating market volatility.
+- **Close_Open_Diff**: The difference between the closing price of the previous day and the opening price of the current day, highlighting overnight price changes.
+- **RSI**: A momentum oscillator that measures the speed and change of price movements, used to identify overbought or oversold conditions in a market.
+
 ### Time Series Analysis: ARIMA to SARIMAX
 To forecast future stock prices, the analysis first employs time series models, specifically ARIMA (Auto-Regressive Integrated Moving Average). The order and seasonal order of the model are optimized using metrics like AIC and diagnostics such as residual analysis to ensure stationarity and minimize autocorrelation. However, the presence of seasonal trends and exogenous factors, such as earnings reports or macroeconomic events, makes ARIMA limited in scope. To address these, the analysis extends to SARIMAX (Seasonal ARIMA with Exogenous Variables), which can model both seasonality and external influences, thus improving the accuracy of predictions.
 
