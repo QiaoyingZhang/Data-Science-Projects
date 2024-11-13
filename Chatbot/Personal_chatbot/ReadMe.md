@@ -7,6 +7,8 @@
 * **intents.json** - json file with all possible patterns and their responses
 * **tags.pkl** - pickle file of the tags of intents
 * **words.pkl** - pickle file of the tokenized words of patterns
+  
+![chat-bot-preview](https://github.com/user-attachments/assets/25fab9be-fb2d-4a62-a18b-3f71f6ef213b)
 
 ## About ANN And ReLU
 An Artificial Neural Network is a framework for machine learning that emulates the workings of the human brain. It consists of interconnected processing units, called neurons, organized into layers. These layers typically include an input layer, one or more hidden layers, and an output layer. 
